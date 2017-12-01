@@ -14,6 +14,14 @@ $(function () {
         navText: [],
         dots: true
     });
+
+    // atelleir popup
+    $(".atelier__img").magnificPopup({
+        type: "image",
+        gallery: {
+            enabled: true
+        }
+    });
 });
 
 $(window).on("load", function () {
