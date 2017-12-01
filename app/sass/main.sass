@@ -3,52 +3,556 @@
 @import "vars"
 
 *
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    &:before, &:after
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
-	opacity: 1
+    color: #666
+    opacity: 1
 
 *:-moz-placeholder
-	color: #666
-	opacity: 1
+    color: #666
+    opacity: 1
 
 *::-moz-placeholder
-	color: #666
-	opacity: 1
+    color: #666
+    opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
-	opacity: 1
+    color: #666
+    opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+    color: #666
+
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+    color: #666
 
 html, body
-	height: 100%
+    height: 100%
 
 body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: $default-font
-	overflow-x: hidden
-	opacity: 1
+    font-size: 16px
+    min-width: 320px
+    position: relative
+    line-height: 1.65
+    font-family: $default-font, "Arial", "Helvetica", sans-serif
+    overflow-x: hidden
+    opacity: 1
+    background-color: $main-color
 
 .img-responsive
-	display: block
-	max-width: 100%
-	height: auto
+    display: block
+    max-width: 100%
+    height: auto
+
+.logo
+    display: block
+    width: 115px
+    height: 57px
+    background: url(../img/logo.png) no-repeat center center
+    background-size: cover
+
+.menu
+    padding: 0
+    margin: 0
+    list-style-type: none
+    .menu__item
+        float: left
+        margin-right: 29px
+        a
+            color: $text-color
+            font-family: "Comfortaa-Bold", sans-serif
+            font-size: 20px
+            text-decoration: none
+        &:last-child
+            margin-right: 0
+
+.menu_light
+    .menu__item
+        a
+            color: $main-color
+            font-family: "Comfortaa-Light", sans-serif
+
+.contacts
+    padding: 0
+    margin: 0
+    list-style-type: none
+    text-align: right
+    .contacts__item
+        .phone
+            display: block
+            line-height: 1.2
+            color: $text-color
+            font-size: 16px
+        &:nth-child(2)
+            .phone
+                margin-bottom: 9px
+        .mail
+            line-height: 1
+            color: $text-color
+            font-size: 16px
+            text-decoration: none
+
+.contacts_light
+    .contacts__item
+        .phone
+            color: $main-color
+        .mail
+            color: $main-color
+
+.social
+    padding: 0
+    margin: 0
+    list-style-type: none
+    .social__item
+        float: right
+        margin-left: 10px
+        a
+            color: $main-color
+            text-decoration: none
+            span
+                font-size: 22px
+        &:last-child
+            margin-left: 0
+
+section
+    h2
+        margin: 0 0 39px
+        color: $accent-color
+        font-size: 24px
+        text-align: center
+        &:after
+            display: block
+            content: ""
+            margin: 11px auto 0
+            width: 85px
+            height: 2px
+            background-color: $accent-color
+
+/* top wrapper */
+
+.topWrapper
+    position: relative
+
+/* header */
+
+.header
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 2
+    width: 100%
+    padding: 32px 0 25px
+    background-color: rgba(255, 255, 255, .3)
+    .container
+        .row
+            display: flex
+            align-items: center
+
+/* hero */
+
+.hero
+    .owl-next
+        position: absolute
+        top: 50%
+        right: 3.5%
+        z-index: 1
+        transform: translateY(-50%)
+        width: 20px
+        height: 33px
+        background: url(../img/slider_right_btn.png) no-repeat center center
+    .owl-prev
+        position: absolute
+        top: 50%
+        left: 3.5%
+        z-index: 1
+        transform: translateY(-50%)
+        width: 20px
+        height: 33px
+        background: url(../img/slider_left_btn.png) no-repeat center center
+    .owl-dots
+        position: absolute
+        left: 50%
+        bottom: 100px
+        z-index: 1
+        transform: translateX(-50%)
+        .owl-dot
+            display: inline-block
+            width: 15px
+            height: 15px
+            margin-right: 6px
+            background-color: transparent
+            border: 1px solid #9c8a83
+            border-radius: 50%
+            &:last-child
+                margin-right: 0
+        .owl-dot.active
+            border: 1px solid #fff
+            background-color: #fff
+
+.hero__item
+    padding: 331px 0 375px
+    background: url(../img/hero_bg.jpg) no-repeat center -53px
+    background-size: 109% 100%
+    .row
+        .col-md-offset-1
+            margin-left: 12.499999995%
+
+.hero__title
+    margin: 0 0 75px
+    line-height: 0.75
+    color: $accent-color
+    font-family: "DecorCTT", sans-serif
+    font-size: 72px
+    span
+        display: block
+        margin-left: 54px
+
+.hero__btn
+    margin-left: 67px
+    padding: 16px 46px 15px 47px
+    border: 1px solid #660000
+    border-radius: 6px
+    outline: none
+    color: $accent-color
+    background-color: transparent
+    font-weight: 700
+    font-size: 18px
+    text-align: center
+
+/* dress */
+
+.dress
+    position: relative
+    padding: 81px 0 100px
+    background: url(../img/dress_bg.jpg) no-repeat center center
+    background-size: cover
+    .container
+        .row
+            &:nth-child(3)
+                > div
+                    padding: 0 39px 0 38px
+            &:nth-child(4)
+                > div
+                    display: flex
+                    justify-content: center
+
+.dress__text
+    margin: 0 0 58px
+    line-height: 1
+    color: #666
+    font-size: 16px
+    text-align: center
+
+.dress__collection
+    position: relative
+    z-index: 2
+    padding: 0
+    margin: 0 -35px 80px
+    list-style-type: none
+    font-size: 0
+    .dress__itemWrapper
+        display: inline-block
+        width: 33.3333%
+        padding: 0 35px
+        margin: 0 0 74px
+        .dress__item
+            box-shadow: 6px 7px 3px -3px #efebec
+            img
+                display: block
+                width: 100%
+                height: auto
+            .dress__caption
+                padding: 27px 26px 30px 28px
+                background-color: #fff
+                p
+                    margin: 0 0 21px
+                    color: $text-color
+                    font-family: "Comfortaa-Light", sans-serif
+                    font-size: 14px
+                    word-wrap: break-word
+
+.dress__content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .stars
+        padding: 0
+        margin: 0
+        list-style-type: none
+        li
+            display: inline-block
+            margin: 0
+            span
+                color: #d8bdc5
+                font-size: 14px
+    button
+        padding: 7px 17px 6px
+        border: 1px solid #9a8881
+        border-radius: 6px
+        outline: none
+        background-color: transparent
+        font-family: "FranklinGothicBook", sans-serif
+        font-size: 12px
+
+.dress__btn
+    padding: 16px 59px 17px 58px
+    color: $accent-color
+    border: 1px solid #660000
+    border-radius: 6px
+    background-color: transparent
+    font-weight: 700
+    font-size: 16px
+
+.dress__topFlower
+    position: absolute
+    top: -150px
+    right: -139px
+    z-index: 1
+
+.dress__bottomFlower
+    position: absolute
+    bottom: 10px
+    left: -129px
+    z-index: 1
+
+/* atelier wrapper */
+
+.atelierWrapper
+    background: url(../img/atelier_wrapper_bg.png) no-repeat center 141px
+    background-size: cover
+
+/* atelier */
+
+.atelier
+    padding: 80px 0 100px
+    text-align: right
+
+.atelier__title
+    margin: 0 13px 59px -13px
+
+.atelier__text
+    margin: 0 13px 49px -13px
+    font-size: 13px
+    text-align: justify
+    &:first-child
+        margin: 0 13px 23px -13px
+
+.atelier__btn
+    margin: 0 13px 0 -13px
+    padding: 19px 43px 20px 44px
+    border: 1px solid #660000
+    border-radius: 6px
+    color: $accent-color
+    background-color: transparent
+    font-weight: 700
+    font-size: 14px
+
+.atelier__img
+    max-width: 100%
+    height: auto
+    &:first-child
+        position: relative
+        z-index: 4
+        margin: 0 0 137px
+    &:nth-child(2)
+        position: absolute
+        top: 132px
+        left: 18px
+        z-index: 1
+    &:nth-child(3)
+        position: absolute
+        top: 335px
+        left: 130px
+        z-index: 2
+    &:nth-child(4)
+        position: absolute
+        top: 261px
+        left: 336px
+        z-index: 3
+
+.review
+    position: relative
+    padding: 80px 0 100px
+    text-align: center
+    .container
+        .row
+            &:nth-child(3)
+                margin: 0 -45px
+
+.review__title
+    margin: 0
+
+.review__count
+    margin: 0 0 65px
+    line-height: 1
+    color: $accent-color
+    font-size: 16px
+
+.review__collection
+    padding: 0
+    margin: 0 -40px 80px
+    list-style-type: none
+    font-size: 0
+    .review__itemWrapper
+        display: inline-block
+        width: 50%
+        padding: 0 40px
+        font-size: 1px
+        vertical-align: top
+        .review__item
+            position: relative
+            z-index: 1
+            padding: 34px 88px 40px 92px
+            background-color: #fff
+            box-shadow: 6px 7px 3px -3px #efebec
+            .review__author
+                margin: 0 0 23px
+                color: $accent-color
+                font-weight: 700
+                font-size: 14px
+                text-align: center
+            .review__text
+                margin: 0 0 25px
+                color: #8f8f8f
+                font-family: "Comfortaa-Light", sans-serif
+                font-size: 12px
+                word-wrap: break-word
+            .review__date
+                color: #a7a7a7
+                font-weight: 700
+                font-size: 12px
+                text-align: right
+            img
+                position: absolute
+                bottom: 16px
+                left: 30px
+
+.review__btn
+    padding: 18px 47px 17px 45px
+    border: 1px solid #660000
+    border-radius: 6px
+    outline: none
+    color: $accent-color
+    background-color: transparent
+    font-weight: 700
+    font-size: 14px
+
+.review__bottomFlower
+    position: absolute
+    bottom: 13px
+    right: -112px
+    z-index: 0
+
+/* gallery */
+
+.gallery
+    padding: 80px 0 100px
+    background-color: #fff
+    text-align: center
+
+.gallery__title
+    margin: 0 0 61px
+
+.gallery__collection
+    padding: 0
+    margin: 0 0 80px
+
+.gallery__item
+    padding: 14px
+    img
+        display: block
+        width: 100%
+        box-shadow: 6px 7px 3px -3px #efebec
+
+.gallery__btn
+    padding: 18px 47px 17px 45px
+    border: 1px solid #660000
+    border-radius: 6px
+    outline: none
+    color: $accent-color
+    background-color: transparent
+    font-weight: 700
+    font-size: 14px
+
+/* booking */
+
+.booking
+    padding: 80px 0 115px
+    background: url(../img/book_bg.png) no-repeat center 11px
+    background-size: cover
+
+.booking__title
+    margin: 0 0 179px
+
+.booking__form
+    padding: 35px
+    input
+        float: left
+        padding: 0 12px 6px 12px
+        margin: 0 48px 51px 0
+        width: 159px
+        border: none
+        outline: none
+        color: #954c61
+        background-color: transparent
+        border-bottom: 1px solid #d1d1d1
+        font-family: "Comfortaa-Light", sans-serif
+        font-size: 14px
+        &:nth-child(2n)
+            margin-right: 0
+        &::placeholder
+            color: #954c61
+    .booking__inputMessage
+        width: 367px
+        margin: 0 0 49px
+    input.booking__btn
+        float: right
+        padding: 12px 37px 14px
+        margin: 0 21px 0 0
+        border: 1px solid #660000
+        border-radius: 6px
+        outline: none
+        color: $accent-color
+        background-color: transparent
+        font-weight: 700
+        font-size: 14px
+
+/* footer */
+
+.footer
+    padding: 41px 0 22px
+    background: url(../img/footer_bg.png) rgba(154,136,129,0.9) no-repeat 766px 0
+    background-size: contain
+    .logo
+        margin: 0 0 25px
+    .menu
+        margin-left: 60px
+    .social
+        margin-top: 36px
+    .row
+        display: flex
+        align-items: center
+
+p.footer__text
+    margin: 0
+    line-height: 1.2
+    color: #fff
+    font-family: "Comfortaa-Light", sans-serif
+    font-size: 13px
+
+p.footer__copyright
+    margin: 0
+    color: $main-color
+    font-size: 14px
+    text-align: center
 
 @import "media"
