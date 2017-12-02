@@ -43,7 +43,7 @@ body
     min-width: 320px
     position: relative
     line-height: 1.65
-    font-family: $default-font, "Arial", "Helvetica", sans-serif
+    font-family: "Comfortaa", "Arial", "Helvetica", sans-serif
     overflow-x: hidden
     opacity: 1
     background-color: $main-color
@@ -69,7 +69,7 @@ body
         margin-right: 29px
         a
             color: $text-color
-            font-family: "Comfortaa-Bold", sans-serif
+            font-weight: 700
             font-size: 20px
             text-decoration: none
             &:after
@@ -93,7 +93,9 @@ body
     .menu__item
         a
             color: $main-color
-            font-family: "Comfortaa-Light", sans-serif
+            font-weight: 300
+            &:after
+                background-color: $main-color
 
 .contacts
     padding: 0
@@ -105,6 +107,7 @@ body
             display: block
             line-height: 1.2
             color: $text-color
+            font-weight: 700
             font-size: 16px
         &:nth-child(2)
             .phone
@@ -150,6 +153,34 @@ section
             width: 85px
             height: 2px
             background-color: $accent-color
+
+/* overlay at start */
+.mfp-fade.mfp-bg
+    opacity: 0
+    transition: all 0.15s ease-out
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready
+    opacity: 0.8
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing
+    opacity: 0
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content
+    opacity: 0
+    transition: all .5s ease-out
+    transform: scale(0) rotate(90deg)
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+    opacity: 1
+    transform: scale(1) rotate(0deg)
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+    opacity: 0
 
 /* top wrapper */
 
@@ -310,8 +341,8 @@ section
                 p
                     margin: 0 0 21px
                     color: $text-color
-                    font-family: "Comfortaa-Light", sans-serif
-                    font-size: 14px
+                    font-weight: 300
+                    font-size: 13px
                     word-wrap: break-word
 
 .dress__content
@@ -430,7 +461,7 @@ section
     margin: 0 0 65px
     line-height: 1
     color: $accent-color
-    font-size: 16px
+    font-size: 15px
 
 .review__collection
     padding: 0
@@ -458,7 +489,7 @@ section
             .review__text
                 margin: 0 0 25px
                 color: #8f8f8f
-                font-family: "Comfortaa-Light", sans-serif
+                font-weight: 300
                 font-size: 12px
                 word-wrap: break-word
             .review__date
@@ -505,6 +536,7 @@ section
     padding: 14px
     overflow: hidden
     .gallery__img
+        display: block
         overflow: hidden
         img
             display: block
@@ -546,7 +578,7 @@ section
         color: #954c61
         background-color: transparent
         border-bottom: 1px solid #d1d1d1
-        font-family: "Comfortaa-Light", sans-serif
+        font-weight: 300
         font-size: 14px
         &:nth-child(2n)
             margin-right: 0
@@ -576,7 +608,7 @@ section
     .logo
         margin: 0 0 25px
     .menu
-        margin-left: 60px
+        margin-left: 12px
     .social
         margin-top: 36px
     .row
@@ -587,7 +619,7 @@ p.footer__text
     margin: 0
     line-height: 1.2
     color: #fff
-    font-family: "Comfortaa-Light", sans-serif
+    font-weight: 300
     font-size: 13px
 
 p.footer__copyright

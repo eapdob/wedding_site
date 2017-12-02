@@ -27,9 +27,10 @@ gulp.task('js', ['main-js'], function () {
         'app/libs/jquery/dist/jquery.js',
         'app/libs/owl.carousel/dist/owl.carousel.js',
         'app/libs/imagesloaded/imagesloaded.pkgd.min.js',
-        'app/libs/imagefill/jquery-imagefill.js',
         'app/libs/masonry/masonry.pkgd.min.js',
         'app/libs/magnific-popup/jquery.magnific-popup.js',
+        'app/libs/waypoints/lib/jquery.waypoints.js',
+        'app/libs/animate/animate-css.js',
         'app/js/main.min.js'
     ])
         .pipe(concat('scripts.min.js'))
