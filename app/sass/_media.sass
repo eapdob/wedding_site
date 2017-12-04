@@ -4,13 +4,135 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	/**/
+    .menu
+        margin: 0 -30px !important
 
+    .menu
+        .menu__item
+            margin-right: 13px
+
+    .contacts
+        .contacts__item
+            .phone,
+            .mail
+                font-size: 13px
+
+    .dress__content
+        flex-direction: column
+        .stars
+            margin: 0 0 16px
+
+    .review__count
+        font-size: 11px
+
+    .booking__form
+        input
+            width: 42%
+        .booking__inputMessage
+            width: 100%
+        input.booking__btn
+            float: right
+            padding: 12px 18px 14px
+            margin: 0
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
+@media only screen and (max-width : 991px)
+    .toggleMenu, .mobileMenu
+        display: block
+    .menu
+        .menu__item
+            float: none
+            display: block
+            margin: 0
+            text-align: center
+            a
+                display: block
+                padding: 20px 0
+                border-top: 1px solid $text-color
+                &:after
+                    display: none
+            &:last-child
+                border-bottom: 1px solid $text-color
 
+    .contacts
+        .contacts__item
+            .phone
+                text-align: center
+            &:last-child
+                text-align: center
+
+    .dress
+        .container
+            .row:nth-child(3)
+                > div
+                    padding: 0 15px
+
+    .dress__text
+        position: relative
+        z-index: 2
+
+    .dress__collection
+        .dress__itemWrapper
+            width: 50%
+
+    .dress__btn
+        position: relative
+        z-index: 2
+        background-color: $main-color
+
+    .atelier__text
+        margin: 0 0 49px
+        &:first-child
+            margin: 0 0 23px
+
+    .atelier__btn
+        margin: 0 -33.333333% 0 0
+
+    .atelier__img
+        &:nth-child(3)
+            top: 222px
+        &:nth-child(4)
+            top: 229px
+            left: 180px
+
+    .review__collection
+        .review__itemWrapper
+            .review__item
+                padding: 34px 40px 40px
+
+    .booking__form
+        input
+            width: 100%
+        input.booking__btn
+            float: none
+            display: block
+            margin: 0 auto
+
+    .footer
+        .row
+            flex-direction: column
+        .logo
+            margin: 0 auto 25px
+        .footer__text
+            margin-bottom: 35px
+            text-align: center
+        .menu
+            margin: 0 auto 35px !important
+            .menu__item
+                float: none
+                display: block
+                margin: 0
+                text-align: center
+                a
+                    display: block
+                    padding: 20px 0
+                    border-top: none
+                    &:after
+                        display: none
+                &:last-child
+                    border-bottom: none
+        .social
+            margin-bottom: 25px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)

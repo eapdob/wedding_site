@@ -2,6 +2,8 @@
 @import "libs"
 @import "vars"
 
+/* basic */
+
 *
     -webkit-box-sizing: border-box
     -moz-box-sizing: border-box
@@ -36,11 +38,12 @@ body textarea:required:valid
     color: #666
 
 html, body
-    height: 100%
+    overflow-x: hidden
 
 body
     font-size: 16px
     min-width: 320px
+    height: 100%
     position: relative
     line-height: 1.65
     font-family: "Comfortaa", "Arial", "Helvetica", sans-serif
@@ -53,12 +56,16 @@ body
     max-width: 100%
     height: auto
 
+/* logo */
+
 .logo
     display: block
     width: 115px
     height: 57px
     background: url(../img/logo.png) no-repeat center center
     background-size: cover
+
+/* menu */
 
 .menu
     padding: 0
@@ -97,6 +104,8 @@ body
             &:after
                 background-color: $main-color
 
+/* contacts */
+
 .contacts
     padding: 0
     margin: 0
@@ -125,6 +134,8 @@ body
         .mail
             color: $main-color
 
+/* social */
+
 .social
     padding: 0
     margin: 0
@@ -140,6 +151,8 @@ body
         &:last-child
             margin-left: 0
 
+/* section */
+
 section
     h2
         margin: 0 0 39px
@@ -153,6 +166,112 @@ section
             width: 85px
             height: 2px
             background-color: $accent-color
+
+/* btn */
+
+.btn
+    border: 1px solid $accent-color-dark !important
+    border-radius: 6px
+    outline: none
+    color: $accent-color
+    background-color: transparent
+    font-weight: 700
+    font-size: 18px
+    text-align: center
+    transition: all .5s ease
+    &:hover
+        color: $main-color
+        background-color: $accent-color
+
+
+/* mobile menu */
+
+.toggleMenu
+    display: none
+    margin-top: -24px
+    float: right
+
+$w : 51px
+$h : 4px
+
+.sandwich
+    position: relative
+    top: 8px
+    bottom: 0
+    left: 0
+    right: 0
+    width: $w
+    height: $w
+    margin: 0 auto
+    z-index: 200
+    > span
+        display: block
+
+.sandwich__top
+    position: relative
+    top: 0
+    width: $w
+    height: $h
+    background: $text-color
+    border: none
+    border-radius: 4px 4px 4px 4px
+    transition: transform 0.5s, top 0.2s
+    transition-delay: 0.2s, 0s
+
+.sandwich__middle
+    position: relative
+    width: $w
+    height: $h
+    top: $h * 2.6
+    background: $text-color
+    border: none
+    border-radius: 4px 4px 4px 4px
+    transition: transform 0.5s, top 0.2s
+    transition-delay: 0.2s, 0s
+
+.sandwich__bottom
+    position: relative
+    width: $w
+    height: $h
+    top: $h * 5.2
+    background: $text-color
+    border: none
+    border-radius: 4px 4px 4px 4px
+    transition: all 0.5s
+    transition-delay: 0.1s
+
+.sandwich.active
+    .sandwich__top
+        top: 12px
+        transform: rotate(-45deg)
+    .sandwich__middle
+        top: 9px
+        transform: rotate(45deg)
+    .sandwich__bottom
+        opacity: 0
+        top: 0
+        transform: rotate(180deg)
+
+.mobileMenu
+    display: none
+    position: absolute
+    top: 100%
+    right: -100px
+    width: 100%
+    background-color: rgba(255, 255, 255, .8)
+    transition: all .5s ease
+    opacity: 0
+    visibility: hidden
+
+.mobileMenu.active
+    right: 0
+    opacity: 1
+    visibility: visible
+
+.opacify
+    opacity: 0 !important
+
+/* magnific popup */
 
 /* overlay at start */
 .mfp-fade.mfp-bg
@@ -278,15 +397,6 @@ section
     opacity: 0
     margin-left: 67px
     padding: 16px 46px 15px 47px
-    border: 1px solid #660000
-    border-radius: 6px
-    outline: none
-    color: $accent-color
-    background-color: transparent
-    font-weight: 700
-    font-size: 18px
-    text-align: center
-    transition: all .5s ease
 
 /* dress */
 
@@ -326,15 +436,14 @@ section
         margin: 0 0 74px
         .dress__item
             box-shadow: 6px 7px 3px -3px #efebec
+            transition: all .5s ease
             .dress__img
                 overflow: hidden
                 img
                     display: block
                     width: 100%
                     height: auto
-                    transition: transform .5s ease
-                    &:hover
-                        transform: scale(1.3)
+                    transition: all .5s ease
             .dress__caption
                 padding: 27px 26px 30px 28px
                 background-color: #fff
@@ -344,6 +453,12 @@ section
                     font-weight: 300
                     font-size: 13px
                     word-wrap: break-word
+                    text-align: center
+            &:hover
+                box-shadow: 6px 7px 3px -3px #656565
+                .dress__img
+                    img
+                        transform: scale(1.5)
 
 .dress__content
     display: flex
@@ -361,20 +476,19 @@ section
                 font-size: 14px
     button
         padding: 7px 17px 6px
-        border: 1px solid #9a8881
+        border: 1px solid $accent-color-dark
         border-radius: 6px
         outline: none
         background-color: transparent
         font-family: "FranklinGothicBook", sans-serif
         font-size: 12px
+        transition: all .5s ease
+        &:hover
+            color: $main-color
+            background-color: $accent-color
 
 .dress__btn
     padding: 16px 59px 17px 58px
-    color: $accent-color
-    border: 1px solid #660000
-    border-radius: 6px
-    background-color: transparent
-    font-weight: 700
     font-size: 16px
 
 .dress__topFlower
@@ -414,11 +528,6 @@ section
 .atelier__btn
     margin: 0 13px 0 -13px
     padding: 19px 43px 20px 44px
-    border: 1px solid #660000
-    border-radius: 6px
-    color: $accent-color
-    background-color: transparent
-    font-weight: 700
     font-size: 14px
 
 .atelier__img
@@ -504,12 +613,6 @@ section
 
 .review__btn
     padding: 18px 47px 17px 45px
-    border: 1px solid #660000
-    border-radius: 6px
-    outline: none
-    color: $accent-color
-    background-color: transparent
-    font-weight: 700
     font-size: 14px
 
 .review__bottomFlower
@@ -548,12 +651,6 @@ section
 
 .gallery__btn
     padding: 18px 47px 17px 45px
-    border: 1px solid #660000
-    border-radius: 6px
-    outline: none
-    color: $accent-color
-    background-color: transparent
-    font-weight: 700
     font-size: 14px
 
 /* booking */
@@ -589,15 +686,11 @@ section
         margin: 0 0 49px
     input.booking__btn
         float: right
+        width: auto
         padding: 12px 37px 14px
         margin: 0 21px 0 0
-        border: 1px solid #660000
-        border-radius: 6px
-        outline: none
-        color: $accent-color
-        background-color: transparent
-        font-weight: 700
         font-size: 14px
+        text-align: center
 
 /* footer */
 

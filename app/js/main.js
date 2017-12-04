@@ -35,22 +35,39 @@ $(function () {
         mainClass: "mfp-fade"
     });
 
-
+    // animation section title
     $(".dress__title").animated("fadeInUp", "fadeOutDown");
     $(".atelier__title").animated("fadeInLeft", "fadeOutLeft");
     $(".review__title").animated("fadeInUp", "fadeOutDown");
     $(".gallery__title").animated("fadeInUp", "fadeOutDown");
     $(".booking__title").animated("fadeInUp", "fadeOutDown");
-    // $(".dress__title").waypoint(function(direction) {
-    //     if (direction === "down") {
-    //         console.log("down");
-    //         $($(this)[0]['element']).addClass("animated bounceInDown").css("opacity", "1");
-    //     } else {
-    //         console.log("up");
-    //     }
-    // }, {
-    //     offset: '80%'
-    // });
+
+    // window resizing
+    $(window).on("resize", function() {
+        // change to mobile menu
+        if ($(window).width() < 992) {
+            $(".header__nav").appendTo($(".mobileMenu"));
+        } else {
+            $(".header__nav").appendTo($(".desktopMenu"));
+        }
+        $(".sandwich").removeClass("active");
+        $(".mobileMenu").removeClass("active");
+        $(".hero__title, .hero__btn, .hero .owl-next, .hero .owl-prev").removeClass("opacify");
+    });
+    $(window).trigger("resize");
+
+    // mobile menu click
+    $(".toggleMenu").on("click", function() {
+        if ($(".mobileMenu").css("opacity") === "1") {
+            $(".sandwich").removeClass("active");
+            $(".mobileMenu").removeClass("active");
+            $(".hero__title, .hero__btn, .hero .owl-next, .hero .owl-prev").removeClass("opacify");
+        } else {
+            $(".sandwich").addClass("active");
+            $(".mobileMenu").addClass("active");
+            $(".hero__title, .hero__btn, .hero .owl-next, .hero .owl-prev").addClass("opacify");
+        }
+    });
 });
 
 $(window).on("load", function () {
