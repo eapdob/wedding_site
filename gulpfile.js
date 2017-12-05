@@ -31,6 +31,7 @@ gulp.task('js', ['main-js'], function () {
         'app/libs/magnific-popup/jquery.magnific-popup.js',
         'app/libs/waypoints/lib/jquery.waypoints.js',
         'app/libs/animate/animate-css.js',
+        'app/libs/scroll2id/PageScroll2id.min.js',
         'app/js/main.min.js'
     ])
         .pipe(concat('scripts.min.js'))

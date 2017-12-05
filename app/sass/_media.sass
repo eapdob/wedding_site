@@ -3,11 +3,12 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-    .menu
-        margin: 0 -30px !important
+@media only screen and (max-width : 1199px)
+    .desktopMenu
+        left: 6%
 
     .menu
+        margin: 0 -55px
         .menu__item
             margin-right: 13px
 
@@ -15,7 +16,9 @@
         .contacts__item
             .phone,
             .mail
-                font-size: 13px
+                font-size: 12px
+            .mail
+                right: 11px
 
     .dress__content
         flex-direction: column
@@ -35,10 +38,15 @@
             padding: 12px 18px 14px
             margin: 0
 
+    .footer
+        .menu
+            margin-left: -20px
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
     .toggleMenu, .mobileMenu
         display: block
+
     .menu
         .menu__item
             float: none
@@ -60,6 +68,8 @@
                 text-align: center
             &:last-child
                 text-align: center
+            .mail
+                position: static
 
     .dress
         .container
@@ -74,11 +84,6 @@
     .dress__collection
         .dress__itemWrapper
             width: 50%
-
-    .dress__btn
-        position: relative
-        z-index: 2
-        background-color: $main-color
 
     .atelier__text
         margin: 0 0 49px
@@ -117,7 +122,7 @@
             margin-bottom: 35px
             text-align: center
         .menu
-            margin: 0 auto 35px !important
+            margin: 0 auto 35px
             .menu__item
                 float: none
                 display: block
@@ -135,14 +140,107 @@
             margin-bottom: 25px
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	/**/
+@media only screen and (max-width : 767px)
+    .header
+        padding: 40px 0
 
+    .hero__item
+        padding: 260px 0
+        .row
+            > div
+                margin-left: 8.33333333%
+
+    .hero__title
+        span
+            margin-left: 0
+
+    .hero__btn
+        display: block
+        margin: 0 auto
+
+    .dress__collection
+        .dress__itemWrapper
+            width: 100%
+            .dress__item
+                .dress__caption
+                    p
+                        font-size: 16px
+
+    .dress__content
+        .stars
+            margin: 0 0 20px
+        button
+            font-size: 16px
+
+    .atelier
+        padding: 80px 0 140px
+
+    .atelier__text
+        font-size: 14px
+
+    .atelier__btn
+        display: block
+        margin: 0 auto 56px
+
+    .atelier__img
+        &:nth-child(2)
+            top: 202px
+        &:nth-child(3)
+            top: 292px
+
+    .review__count
+        margin: 0 0 60px
+
+    .review__collection
+        margin: 0 0 80px
+        .review__itemWrapper
+            width: 100%
+            margin: 0 0 40px
+
+    .booking
+        background: url(../img/book_bg.png) no-repeat right center
+
+    .booking__title
+        margin: 0 0 85px
+
+    .footer
+        padding: 60px 0 40px
+
+    .social
+        .social__item
+            margin-left: 38px
+            a
+                span
+                    font-size: 34px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+    .header
+        .logo
+            width: 56px
+            height: 29px
 
+    .header
+        .contacts
+            margin: 0 0 0 -40px
+
+    .hero__btn
+        padding: 12px 10px
+
+    .atelier__img
+        &:nth-child(2)
+            top: 185px
+        &:nth-child(3)
+            top: 193px
+        &:nth-child(4)
+            top: 318px
+
+    .review
+        padding: 120px 0 100px
+
+    .booking__form
+        input.booking__btn
+            width: 100%
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
@@ -174,4 +272,3 @@
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
 	/**/
-

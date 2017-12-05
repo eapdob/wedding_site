@@ -68,6 +68,16 @@ $(function () {
             $(".hero__title, .hero__btn, .hero .owl-next, .hero .owl-prev").addClass("opacify");
         }
     });
+
+    // smooth scroll
+    $(".menu .menu__item a").mPageScroll2id();
+
+    // disable menu
+    $(".menu .menu__item a").on("click", function() {
+        $(".sandwich").removeClass("active");
+        $(".mobileMenu").removeClass("active");
+        $(".hero__title, .hero__btn, .hero .owl-next, .hero .owl-prev").removeClass("opacify");
+    });
 });
 
 $(window).on("load", function () {
